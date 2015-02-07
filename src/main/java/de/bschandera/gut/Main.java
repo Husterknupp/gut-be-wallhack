@@ -14,7 +14,11 @@ public class Main {
         if (secondArg.equals(INIT)) {
             Init init = new Init();
             init.init();
+        }else if(secondArg.equals(LOG)){
+        	Log test = new Log();
+        	test.log();
         }
+        
 
     }
 
