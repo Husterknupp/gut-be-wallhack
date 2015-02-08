@@ -17,6 +17,9 @@ public class Main {
         }else if(secondArg.equals(LOG)){
         	Log test = new Log();
         	test.log();
+        }else if(secondArg.equals(COMMIT)){
+        	Commit test = new Commit();
+        	test.changeLog(15);
         }
         
 

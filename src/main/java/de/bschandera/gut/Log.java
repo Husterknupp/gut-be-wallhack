@@ -9,7 +9,6 @@ public class Log {
 	public boolean log() {
 		try {
 			FileReader fr = new FileReader(".gut/log");
-
 			BufferedReader logfile = new BufferedReader(fr);
 			String line;
 
