@@ -2,6 +2,8 @@ package de.bschandera.gut;
 
 public class Main {
 
+    public static final String GUT = ".gut";
+
     private static final String INIT = "init";
     private static final String ADD = "add";
     private static final String COMMIT = "commit";
@@ -10,19 +12,19 @@ public class Main {
 
     public static void main(String[] args) {
 
-        String secondArg = args[0];
-        if (secondArg.equals(INIT)) {
-            Init init = new Init();
-            init.init();
-        }else if(secondArg.equals(LOG)){
-        	Log test = new Log();
-        	test.log();
-        }else if(secondArg.equals(COMMIT)){
-        	Commit test = new Commit();
-        	test.changeLog(15);
+        String command = args[0];
+        if (command.equals(INIT)) {
+            new Init().init();
+        } else if (command.equals(LOG)) {
+            new Log().log();
+        } else if (command.equals(ADD)) {
+            String fileName = args[1];
+            new Add().add(fileName);
+        }else if(command.equals(COMMIT)) {
+            int commitId = Integer.valueOf(args[1]);
+            // TODO read commitId from HEAD file
+            new Commit().changeLog(commitId);
         }
-        
-
     }
 
 }
