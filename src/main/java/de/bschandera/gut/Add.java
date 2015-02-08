@@ -22,8 +22,8 @@ public class Add {
             } else {
                 System.out.println(fileName + " does not exist. Please spell it rightly.");
                 System.out.println("Directory:");
-                FileUtils.listFilesAndDirs(ROOT, TrueFileFilter.INSTANCE,
-                        FalseFileFilter.INSTANCE).stream().forEach(file -> System.out.println(file));
+                FileUtils.listFilesAndDirs(ROOT, TrueFileFilter.INSTANCE, FalseFileFilter.INSTANCE).
+                        stream().forEach(System.out::println);
                 return false;
             }
         } catch (IOException e) {

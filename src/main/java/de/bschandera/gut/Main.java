@@ -21,9 +21,10 @@ public class Main {
             String fileName = args[1];
             new Add().add(fileName);
         }else if(command.equals(COMMIT)) {
-            int commitId = Integer.valueOf(args[1]);
+            final Commit commit = new Commit();
             // TODO read commitId from HEAD file
-            new Commit().changeLog(commitId);
+            int commitId = commit.getCommitId();
+            commit.changeLog(commitId);
         }
     }
 
